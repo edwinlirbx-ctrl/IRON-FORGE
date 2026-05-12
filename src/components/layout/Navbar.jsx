@@ -25,7 +25,7 @@ export default function Navbar() {
               <span className="text-primary-foreground font-inter font-black text-sm">KV</span>
             </div>
             <span className="font-inter font-black text-lg tracking-tighter text-foreground hidden sm:block">
-              KINETIC VANGUARD
+              COOLER
             </span>
           </Link>
 

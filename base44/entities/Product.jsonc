@@ -1,0 +1,110 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL-friendly slug"
+    },
+    "description": {
+      "type": "string",
+      "description": "Product description"
+    },
+    "price": {
+      "type": "number",
+      "description": "Retail price"
+    },
+    "compare_at_price": {
+      "type": "number",
+      "description": "Original/compare price for showing discounts"
+    },
+    "cost_price": {
+      "type": "number",
+      "description": "Supplier cost price (hidden from customers)"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "kettlebells",
+        "barbells",
+        "dumbbells",
+        "resistance_bands",
+        "accessories",
+        "apparel",
+        "recovery"
+      ],
+      "description": "Product category"
+    },
+    "weight": {
+      "type": "string",
+      "description": "Product weight specification"
+    },
+    "material": {
+      "type": "string",
+      "description": "Material composition"
+    },
+    "grip_type": {
+      "type": "string",
+      "description": "Grip type or texture"
+    },
+    "dimensions": {
+      "type": "string",
+      "description": "Product dimensions"
+    },
+    "ref_code": {
+      "type": "string",
+      "description": "Internal reference code (e.g. KB-092)"
+    },
+    "images": {
+      "type": "array",
+      "description": "Product image URLs",
+      "items": {
+        "type": "string"
+      }
+    },
+    "supplier_name": {
+      "type": "string",
+      "description": "Dropship supplier name"
+    },
+    "supplier_url": {
+      "type": "string",
+      "description": "Supplier product URL for ordering"
+    },
+    "supplier_sku": {
+      "type": "string",
+      "description": "Supplier SKU for ordering"
+    },
+    "shipping_origin": {
+      "type": "string",
+      "description": "Where the product ships from"
+    },
+    "estimated_shipping_days": {
+      "type": "number",
+      "description": "Estimated shipping days"
+    },
+    "in_stock": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether product is available"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Show on homepage"
+    },
+    "sort_order": {
+      "type": "number",
+      "default": 0,
+      "description": "Display sort order"
+    }
+  },
+  "required": [
+    "name",
+    "price",
+    "category"
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "order_number": {
+      "type": "string",
+      "description": "Unique order number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "processing",
+        "shipped_to_supplier",
+        "supplier_confirmed",
+        "in_transit",
+        "delivered",
+        "cancelled",
+        "refunded"
+      ],
+      "default": "pending",
+      "description": "Order status"
+    },
+    "customer_name": {
+      "type": "string"
+    },
+    "customer_email": {
+      "type": "string"
+    },
+    "customer_phone": {
+      "type": "string"
+    },
+    "shipping_address": {
+      "type": "string"
+    },
+    "shipping_city": {
+      "type": "string"
+    },
+    "shipping_state": {
+      "type": "string"
+    },
+    "shipping_zip": {
+      "type": "string"
+    },
+    "shipping_country": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "description": "Ordered items",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "price": {
+            "type": "number"
+          },
+          "supplier_sku": {
+            "type": "string"
+          },
+          "supplier_name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "subtotal": {
+      "type": "number"
+    },
+    "shipping_cost": {
+      "type": "number"
+    },
+    "total": {
+      "type": "number"
+    },
+    "supplier_order_id": {
+      "type": "string",
+      "description": "Order ID from the supplier"
+    },
+    "tracking_number": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "customer_name",
+    "customer_email",
+    "shipping_address"
+  ]
+}

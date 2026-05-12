@@ -10,6 +10,10 @@ const categories = [
   { name: 'RESISTANCE', slug: 'resistance_bands', desc: 'Progressive tension' },
   { name: 'ACCESSORIES', slug: 'accessories', desc: 'Essential gear' },
   { name: 'RECOVERY', slug: 'recovery', desc: 'Optimize restoration' },
+  { name: 'NUTRITION', slug: 'nutrition', desc: 'Fuel your performance' },
+  { name: 'HYDRATION', slug: 'hydration', desc: 'Stay fueled, stay sharp' },
+  { name: 'APPAREL', slug: 'apparel', desc: 'Train in performance gear' },
+  { name: 'BAGS', slug: 'bags', desc: 'Carry everything you need' },
 ];
 
 export default function CategoryGrid() {

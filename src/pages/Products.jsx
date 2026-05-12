@@ -9,14 +9,17 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { motion } from 'framer-motion';
 
 const CATEGORIES = [
-  { value: 'all', label: 'ALL EQUIPMENT' },
+  { value: 'all', label: 'ALL' },
   { value: 'kettlebells', label: 'KETTLEBELLS' },
   { value: 'barbells', label: 'BARBELLS' },
   { value: 'dumbbells', label: 'DUMBBELLS' },
-  { value: 'resistance_bands', label: 'RESISTANCE BANDS' },
+  { value: 'resistance_bands', label: 'RESISTANCE' },
   { value: 'accessories', label: 'ACCESSORIES' },
   { value: 'apparel', label: 'APPAREL' },
   { value: 'recovery', label: 'RECOVERY' },
+  { value: 'nutrition', label: 'NUTRITION' },
+  { value: 'hydration', label: 'HYDRATION' },
+  { value: 'bags', label: 'BAGS' },
 ];
 
 export default function Products() {

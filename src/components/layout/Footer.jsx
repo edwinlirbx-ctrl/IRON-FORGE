@@ -27,7 +27,7 @@ export default function Footer() {
           <div>
             <h4 className="font-inter font-black text-xs tracking-widest mb-4 text-foreground">EQUIPMENT</h4>
             <div className="space-y-3">
-              {['Kettlebells', 'Barbells', 'Dumbbells', 'Resistance Bands', 'Recovery'].map(cat => (
+              {['Kettlebells', 'Barbells', 'Dumbbells', 'Resistance Bands', 'Recovery', 'Nutrition', 'Hydration', 'Bags'].map(cat => (
                 <Link
                   key={cat}
                   to={`/products?category=${cat.toLowerCase().replace(' ', '_')}`}

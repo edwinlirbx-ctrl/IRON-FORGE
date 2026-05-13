@@ -12,14 +12,14 @@ export default function Footer() {
               <div className="w-8 h-8 bg-primary flex items-center justify-center">
                 <span className="text-primary-foreground font-inter font-black text-sm">KV</span>
               </div>
-              <span className="font-inter font-black text-lg tracking-tighter">COOLER</span>
+              <span className="font-inter font-black text-lg tracking-tighter">IRON FORGE</span>
             </div>
             <p className="text-muted-foreground text-sm font-inter leading-relaxed max-w-sm">
               Premium gym equipment engineered for those who refuse to settle. 
               Global logistics. Zero compromises.
             </p>
             <p className="text-xs text-muted-foreground font-mono mt-6">
-              © {new Date().getFullYear()} COOLER. ALL RIGHTS RESERVED.
+              © {new Date().getFullYear()} IRON FORGE. ALL RIGHTS RESERVED.
             </p>
           </div>
 

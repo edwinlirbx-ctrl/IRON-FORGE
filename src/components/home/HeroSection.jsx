@@ -104,7 +104,7 @@ export default function HeroSection() {
       <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:block">
         <p className="font-mono text-[10px] text-muted-foreground tracking-[0.3em] writing-mode-vertical"
           style={{ writingMode: 'vertical-rl' }}>
-          COOLER — PERFORMANCE EQUIPMENT — EST. 2024
+          IRON FORGE — PERFORMANCE EQUIPMENT — EST. 2024
         </p>
       </div>
     </section>

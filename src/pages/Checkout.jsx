@@ -28,31 +28,37 @@ export default function Checkout() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (items.length === 0) return;
+
+    // Block checkout inside iframe (preview mode)
+    if (window.self !== window.top) {
+      alert('Checkout only works from the published app. Please open the live URL to complete your purchase.');
+      return;
+    }
+
     setSubmitting(true);
 
-    const orderNumber = 'KV-' + Date.now().toString(36).toUpperCase();
+    try {
+      const origin = window.location.origin;
+      const response = await base44.functions.invoke('createCheckoutSession', {
+        items,
+        shippingCost,
+        customerInfo: form,
+        successUrl: `${origin}/order-confirmation`,
+        cancelUrl: `${origin}/checkout`,
+      });
 
-    await base44.entities.Order.create({
-      ...form,
-      order_number: orderNumber,
-      status: 'pending',
-      items: items.map(i => ({
-        product_id: i.product_id,
-        product_name: i.product_name,
-        quantity: i.quantity,
-        price: i.price,
-        supplier_sku: i.supplier_sku,
-        supplier_name: i.supplier_name,
-      })),
-      subtotal,
-      shipping_cost: shippingCost,
-      total,
-    });
-
-    clearCart();
-    toast.success('Order placed successfully!');
-    navigate(`/order-confirmation?order=${orderNumber}`);
-    setSubmitting(false);
+      if (response.data?.url) {
+        clearCart();
+        window.location.href = response.data.url;
+      } else {
+        toast.error('Could not start checkout. Please try again.');
+        setSubmitting(false);
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error('Checkout failed. Please try again.');
+      setSubmitting(false);
+    }
   };
 
   if (items.length === 0) {
